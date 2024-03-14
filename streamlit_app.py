@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain.llms import OpenAI
 
-# from openai import OpenAI
+from openai import OpenAI
 import json
 
 
