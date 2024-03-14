@@ -4,9 +4,7 @@ from langchain.llms import OpenAI
 # from openai import OpenAI
 import json
 
-client = OpenAI(
-    api_key = openai_api_key
-)
+
 
 schema = {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -28,7 +26,6 @@ schema = {
     }
 }
 
-prompt = "Map information to a valid  JSON output according to the provided JSON Schema. Information: " + text
 
 st.title('Quickstart App')
 
@@ -40,10 +37,15 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'What are the three key pieces of advice for learning how to code?')
+  prompt = "Map information to a valid  JSON output according to the provided JSON Schema. Information: " + text
   submitted = st.form_submit_button('Submit')
+  
   if not openai_api_key.startswith('sk-'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
+    client = OpenAI(
+      api_key = openai_api_key
+    )
     chat_completion = client.chat.completions.create(
     model="gpt-3.5-turbo-1106",
     response_format={"type":"json_object"},
