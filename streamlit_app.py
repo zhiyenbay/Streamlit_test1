@@ -60,11 +60,7 @@ with st.form('my_form'):
 
     if(finish_reason == "stop"):
         data = chat_completion.choices[0].message.content
-        print(data)
-        #ski_resorts = json.loads(data)
-    
-        # for ski_resort in ski_resorts['ski_resorts']:
-        #     print(ski_resort['name']+" : "+str(ski_resort['slope_kilometers'])+"km")
-        #print(ski_resorts['ski_resorts'])
+        st.info(data)
+
     else :
-        print("Error! provide more tokens please")
+        st.info("Error! provide more tokens please")
