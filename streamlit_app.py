@@ -7,8 +7,10 @@ import json
 from bokeh.models import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
+from bokeh.io import show
 
 stt_button = Button(label="Speak", width=100)
+show(stt_button)
 
 # stt_button.js_on_event("button_click", CustomJS(code="""
 #     var recognition = new webkitSpeechRecognition();
