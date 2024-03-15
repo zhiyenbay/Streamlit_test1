@@ -10,6 +10,9 @@ from streamlit_bokeh_events import streamlit_bokeh_events
 from bokeh.io import show
 
 stt_button = Button(label="Speak", width=100)
+button = Button(label = "Click on the button", 
+                button_type = "danger") 
+show(button)
 show(stt_button)
 
 # stt_button.js_on_event("button_click", CustomJS(code="""
