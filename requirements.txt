@@ -2,3 +2,4 @@ streamlit>=1.26.0
 openai
 langchain
 bokeh
+streamlit_bokeh_events
