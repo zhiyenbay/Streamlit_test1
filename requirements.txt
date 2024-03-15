@@ -3,4 +3,4 @@ openai
 langchain
 bokeh
 streamlit_bokeh_events
-bokeh.io
+
